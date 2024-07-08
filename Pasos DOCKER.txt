@@ -1,0 +1,12 @@
+# Abrir bash
+
+# Crear imagen con Dockerfile y requeriments
+docker build . --tag custom_airflow:latest
+
+# crear carpetas
+mkdir -p ./dags ./logs ./plugins ./config
+
+echo -e "AIRFLOW_UID=$(id -u)" > .env
+
+docker compose up -d
+
